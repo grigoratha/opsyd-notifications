@@ -28,7 +28,7 @@ It can be used to automate notifications, email processing, or other scheduled t
 
 ```bash
 git clone <repository_url>
-cd disk-monitor
+cd OPSYD
 ```
 
 ## Install dependencies
