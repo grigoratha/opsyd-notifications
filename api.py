@@ -7,7 +7,7 @@ def fetch_announcements(url):
     try:
         logger.info(f"Probing endpoint: {url}")
 
-        response = requests.get(url, timeout=10)
+        response = requests.get(url, timeout=30)
         response.raise_for_status()
 
         logger.success("Announcements fetched successfully")
