@@ -27,13 +27,14 @@ def main():
         if uid not in updated_archive:
 
             new_items.append({"date": post_date, "description": post_description})
+            logger.info("Announcement:", post_description)
             updated_archive.add(uid)
 
     update_archive(ARCHIVE_FILE, updated_archive)
 
     if new_items:
 
-        send_email(subject="Νέες Ανακοινώσεις ΟΠΣΥΔ", items=new_items)
+        # send_email(subject="Νέες Ανακοινώσεις ΟΠΣΥΔ", items=new_items)
         logger.info(f"Found {len(new_items)} new announcements, e-mail was sent")
 
     else:
