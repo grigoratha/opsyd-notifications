@@ -5,6 +5,9 @@ on:
     - cron: "0 6 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -12,6 +15,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -35,3 +40,17 @@ jobs:
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
           TO_EMAILS: ${{ secrets.TO_EMAILS }}
         run: python app.py
+
+      - name: Commit updated archive
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add archive.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to archive.json"
+          else
+            git commit -m "Update archive.json [skip ci]"
+            git push
+          fi
