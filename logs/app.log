@@ -43,4 +43,4 @@
 2026-06-07 17:53:41.627 | INFO     | api:fetch_announcements:8 - Probing endpoint: https://opsyd.sch.gr/api/General/getTopFiveAnnouncements
 2026-06-07 17:53:42.097 | SUCCESS  | api:fetch_announcements:13 - Announcements fetched successfully
 2026-06-07 17:53:42.099 | INFO     | archive:load_archive:12 - Accessing archive file: archive.json
-2026-06-07 17:53:42.105 | INFO     | __main__:main:41 - No new announcements found
+2026-06-07 17:53:42.105 | INFO     | __main__:main:41 - No new announcements found.

@@ -5,4 +5,4 @@ data/archive.json
 venv/
 .idea/
 .vscode/
-.github/
+.github/*

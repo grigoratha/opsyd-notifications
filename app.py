@@ -7,7 +7,7 @@ from email_service import *
 from api import *
 
 def main():
-
+    
     logger.info("Fetching announcements...")
 
     data = fetch_announcements(OPSYD_API_POSTS_URI)
@@ -34,7 +34,7 @@ def main():
 
     if new_items:
 
-        # send_email(subject="Νέες Ανακοινώσεις ΟΠΣΥΔ", items=new_items)
+        send_email(subject="Νέες Ανακοινώσεις ΟΠΣΥΔ", items=new_items)
         logger.info(f"Found {len(new_items)} new announcements, e-mail was sent")
 
     else:
